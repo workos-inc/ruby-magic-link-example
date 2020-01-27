@@ -6,11 +6,7 @@ require 'json'
 
 # Get your project_id and configure your domain and
 # redirect_uris at https://dashboard.workos.com/sso/configuration
-# DOMAIN = 'acme.com'
-# PROJECT_ID = 'project_01DG5TGK363GRVXP3ZS40WNGEZ'
-# REDIRECT_URI = 'http://localhost:4567/callback'
-
-DOMAIN = 'adifferentdomain.com'
+DOMAIN = 'acme.com'
 PROJECT_ID = 'project_01DG5TGK363GRVXP3ZS40WNGEZ'
 REDIRECT_URI = 'http://localhost:4567/callback'
 
