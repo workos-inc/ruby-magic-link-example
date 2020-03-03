@@ -39,7 +39,6 @@ get '/callback' do
   profile = WorkOS::SSO.profile(
     code: params['code'],
     project_id: PROJECT_ID,
-    redirect_uri: REDIRECT_URI
   )
 
   session[:user] = profile.to_json
