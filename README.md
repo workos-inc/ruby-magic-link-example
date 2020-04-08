@@ -12,7 +12,7 @@ git clone https://github.com/workos-inc/ruby-sso-example.git && cd ruby-sso-exam
 
 ## Configure your environment
 
-1. Grab your [API Key](https://dashboard.workos.com/api-keys). The `workos` gem will read your API key from the ENV variable `WORKOS_KEY`. You may also set the API key yourself by adding `WorkOS.key = $YOUR_API_KEY` to `app.rb`.
+1. Grab your [API Key](https://dashboard.workos.com/api-keys). The `workos` gem will read your API key from the ENV variable `WORKOS_API_KEY`. You may also set the API key yourself by adding `WorkOS.key = $YOUR_API_KEY` to `app.rb`.
 2. Create an [SSO Connection](https://dashboard.workos.com/sso/connections).
 3. Add a [Redirect URI](https://dashboard.workos.com/sso/configuration) with the value `http://localhost:4567/callback`.
 4. Get your [Project ID](https://dashboard.workos.com/sso/configuration).
@@ -33,4 +33,3 @@ ruby app.rb
 Head to `http://localhost:4567` and click Sign In to authenticate!
 
 For more information, see the [WorkOS Ruby SDK documentation](https://docs.workos.com/sdk/ruby).
-
