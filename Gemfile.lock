@@ -12,9 +12,9 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
-    sorbet-runtime (0.5.5284)
+    sorbet-runtime (0.5.5657)
     tilt (2.0.10)
-    workos (0.0.2)
+    workos (0.3.2)
       sorbet-runtime (~> 0.5)
 
 PLATFORMS
@@ -25,4 +25,4 @@ DEPENDENCIES
   workos
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
