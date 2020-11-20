@@ -1,17 +1,18 @@
 # frozen_string_literal: true
 
+require 'dotenv/load'
 require 'sinatra'
 require 'workos'
 require 'json'
 
+WorkOS.key = ENV['WORKOS_API_KEY']
 # Get your project_id and configure your domain and
 # redirect_uris at https://dashboard.workos.com/sso/configuration
-DOMAIN = 'acme.com'
-PROJECT_ID = 'project_01DG5TGK363GRVXP3ZS40WNGEZ'
+PROJECT_ID = 'project_01EGKAEB7G5N88E83MF99J785F'
 REDIRECT_URI = 'http://localhost:4567/callback'
 
 use(
-  Rack::Session::Cookie, 
+  Rack::Session::Cookie,
   key: 'rack.session',
   domain: 'localhost',
   path: '/',
@@ -25,14 +26,19 @@ get '/' do
   erb :index, :layout => :layout
 end
 
-get '/auth' do
-  authorization_url = WorkOS::SSO.authorization_url(
-    domain: DOMAIN,
-    project_id: PROJECT_ID,
-    redirect_uri: REDIRECT_URI,
+post '/passwordless-auth' do
+  session = WorkOS::Passwordless.create_session(
+    email: params[:email],
+    type: 'MagicLink',
+    redirect_uri: REDIRECT_URI
   )
+  WorkOS::Passwordless.send_session(session.id)
 
-  redirect authorization_url
+  redirect '/check-email'
+end
+
+get '/check-email' do
+  erb :check_email, :layout => :layout
 end
 
 get '/callback' do

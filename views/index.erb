@@ -3,5 +3,9 @@
   <pre><%= @current_user %></pre>
   <a class='button' href='/logout'>Sign Out</a>
 <% else %>
-  <a class='button' href='/auth'>Sign In</a>
+  <p>Send a Magic Link to your Email</p>
+  <form method="POST" action="/passwordless-auth">
+    <p>Email: <input type="text" name="email"></p>
+    <input type="submit">
+  </form>
 <% end %>

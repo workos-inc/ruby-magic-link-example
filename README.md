@@ -1,25 +1,25 @@
-# ruby-sso-example
+# ruby-magic-link-example
 
-An example Sinatra application demonstrating how SSO works with WorkOS and Ruby.
+An example Sinatra application demonstrating how Magic Link works with WorkOS and Ruby.
 
 ## Clone and Install
 
 Clone this repo and install dependencies:
 
 ```sh
-git clone https://github.com/workos-inc/ruby-sso-example.git && cd ruby-sso-example && bundle install
+git clone https://github.com/workos-inc/ruby-magic-link-example.git && cd ruby-magic-link-example && bundle install
 ```
 
 ## Configure your environment
 
-1. Grab your [API Key](https://dashboard.workos.com/api-keys). The `workos` gem will read your API key from the ENV variable `WORKOS_API_KEY`. You may also set the API key yourself by adding `WorkOS.key = $YOUR_API_KEY` to `app.rb`.
-2. Create an [SSO Connection](https://dashboard.workos.com/sso/connections).
+1. Grab your [API Key](https://dashboard.workos.com/api-keys).
+2. Run `cp .env.example .env` and add your API key. The `workos` gem will read your API key from the ENV variable `WORKOS_API_KEY`. You may also set the API key yourself by adding `WorkOS.key = $YOUR_API_KEY` to `app.rb`.
+2. Create an [SSO Connection for the Magic Link](https://dashboard.workos.com/sso/connections).
 3. Add a [Redirect URI](https://dashboard.workos.com/sso/configuration) with the value `http://localhost:4567/callback`.
 4. Get your [Project ID](https://dashboard.workos.com/sso/configuration).
 5. Update `app.rb`:
 
 ```ruby
-DOMAIN = "$YOUR_CONNECTIONS_DOMAIN"
 PROJECT_ID = "$YOUR_PROJECT_ID"
 REDIRECT_URI = "$YOUR_REDIRECT_URI"
 ```
