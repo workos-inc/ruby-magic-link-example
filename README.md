@@ -30,6 +30,7 @@ REDIRECT_URI = "$YOUR_REDIRECT_URI"
 ruby app.rb
 ```
 
-Head to `http://localhost:4567` and click Sign In to authenticate!
+Head to `http://localhost:4567` and submit your email. Then, click on the MagicLink
+in the email sent from WorkOS to authenticate to the example app.
 
 For more information, see the [WorkOS Ruby SDK documentation](https://docs.workos.com/sdk/ruby).
